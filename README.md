@@ -30,6 +30,8 @@ var parse5 = require('parse5');
 var stream = require('stream');
 var linter = require('gulp-aurelia-template-lint');
 
+var TemplateRule = require('aurelia-template-lint').TemplateRule;
+
 class AltSelfCloseRule {
     init(parser) {        
         var self = this;
@@ -45,7 +47,7 @@ class AltSelfCloseRule {
 
 gulp.task('build-html', function () {
     return gulp.src('**/*.html')
-        .pipe(linter([new AltSelfCloseRule()]))
+        .pipe(linter([new AltSelfCloseRule(), new TemplateRule()]))
         .pipe(gulp.dest('output'));
 });
 
