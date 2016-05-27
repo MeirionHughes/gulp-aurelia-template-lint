@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var Linter = require('aurelia-template-lint').Linter;
 
-modules.exports = function (rules) {
+module.exports = function (rules) {
     
     var linter = new Linter(rules);
     
