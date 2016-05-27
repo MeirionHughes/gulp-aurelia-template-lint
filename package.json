@@ -1,0 +1,15 @@
+{
+  "name": "gulp-aurelia-template-lint",
+  "description": "gulp plugin to sanity check template html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MeirionHughes/gulp-aurelia-template-lint"
+  },
+  "license": "(Apache-2.0)",
+  "version": "0.1.0",
+  "dependencies": {
+    "aurelia-template-lint": "0.1.x",
+    "gulp": "3.x",
+    "gulp-util": "3.x"
+  }
+}
