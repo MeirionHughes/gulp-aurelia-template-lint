@@ -6,9 +6,10 @@
     "url": "https://github.com/MeirionHughes/gulp-aurelia-template-lint"
   },
   "license": "(Apache-2.0)",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "dependencies": {
-    "aurelia-template-lint": "0.1.x",
+    "template-lint": "0.2.x",
+    "aurelia-template-lint": "0.2.x",
     "gulp": "3.x",
     "gulp-util": "3.x"
   }
