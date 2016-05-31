@@ -41,6 +41,7 @@ gulp.task('build-html', function () {
         .pipe(linter(rules))
         .pipe(gulp.dest('output'));
 });
+```
 
 ##Icon
 
