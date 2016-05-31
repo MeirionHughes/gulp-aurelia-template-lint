@@ -1,5 +1,9 @@
 # gulp-aurelia-template-lint
-Wrap of aurelia-template-lint as a simple gulp plugin
+![logo](https://d30y9cdsu7xlg0.cloudfront.net/png/30843-200.png)
+
+Wrap of aurelia-template-lint as a simple gulp plugin in order to sanity check html
+
+[![NPM version][npm-image]][npm-url]
 
 ## install
 ```
@@ -9,6 +13,7 @@ npm install gulp-aurelia-template-lint
 ## usage
 
 ```
+var gulp = require('gulp');
 var linter = require('gulp-aurelia-template-lint');
 
 gulp.task('lint-template-html', function () {
@@ -21,48 +26,26 @@ gulp.task('lint-template-html', function () {
 
 ## custom rules example
 
-you can override the default set of rules by supplying an array of rules. You can also make your own
+you can override the default set of rules by supplying an array of rules.
 
 ```
 var gulp = require('gulp');
-var gutil = require('gulp-util');
-var parse5 = require('parse5');
-var stream = require('stream');
 var linter = require('gulp-aurelia-template-lint');
 
 var TemplateRule = require('aurelia-template-lint').TemplateRule;
 
-class AltSelfCloseRule {
-    init(parser) {        
-        var self = this;
-        self.errors = [];
-        parser.on('startTag', (name, attrs, selfClosing, location) => {
-            if (selfClosing) { 
-                let error = "boo self-closer!... [line: " + location.line + "]";
-                self.errors.push(error);                
-            }
-        });
-    }
-}
+var rules = [new TemplateRule()];
 
 gulp.task('build-html', function () {
     return gulp.src('**/*.html')
-        .pipe(linter([new AltSelfCloseRule(), new TemplateRule()]))
+        .pipe(linter(rules))
         .pipe(gulp.dest('output'));
 });
 
-```
+##Icon
 
-## non-template work around
-currently there is no way to differenciate between template and 
-non-template html so for now you can igore your full documents with: 
+Icon courtesy of [The Noun Project](https://thenounproject.com/)
 
-```
-gulp.task('build-html', function () {
-    return gulp.src([
-        '!index.html',
-        '**/*.html'])
-        .pipe(linter())
-        .pipe(gulp.dest('output'));
-}); 
-```
+[npm-url]: https://npmjs.org/package/gulp-aurelia-template-lint
+[npm-image]: http://img.shields.io/npm/v/gulp-aurelia-template-lint.svg
+
