@@ -5,6 +5,7 @@ var SelfCloseRule = require('template-lint').SelfCloseRule;
 var ProjectionRule = require('aurelia-template-lint').ProjectionRule;
 var TemplateRule = require('aurelia-template-lint').TemplateRule;
 var RequireRule = require('aurelia-template-lint').RequireRule;
+var ParserRule = require('aurelia-template-lint').ParserRule;
 
 module.exports = function (rules) {
 
