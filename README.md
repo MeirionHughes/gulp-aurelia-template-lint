@@ -1,7 +1,7 @@
 # gulp-aurelia-template-lint
 ![logo](https://d30y9cdsu7xlg0.cloudfront.net/png/30843-200.png)
 
-Wrap of aurelia-template-lint as a simple gulp plugin in order to sanity check html
+Wrap of [aurelia-template-lint](https://github.com/MeirionHughes/aurelia-template-lint) as a simple gulp plugin in order to sanity check html
 
 [![NPM version][npm-image]][npm-url]
 
