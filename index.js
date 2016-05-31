@@ -1,11 +1,14 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var Linter = require('template-lint').Linter;
+
 var SelfCloseRule = require('template-lint').SelfCloseRule;
+var ParserRule = require('template-lint').ParserRule;
+
 var ProjectionRule = require('aurelia-template-lint').ProjectionRule;
 var TemplateRule = require('aurelia-template-lint').TemplateRule;
 var RequireRule = require('aurelia-template-lint').RequireRule;
-var ParserRule = require('aurelia-template-lint').ParserRule;
+
 
 module.exports = function (rules) {
 
