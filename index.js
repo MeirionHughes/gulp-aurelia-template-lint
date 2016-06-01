@@ -16,7 +16,6 @@ module.exports = function (rules) {
         rules = [
             new SelfCloseRule(),
             new ParserRule(), 
-            new ProjectionRule(), 
             new TemplateRule(), 
             new RequireRule()];
 
