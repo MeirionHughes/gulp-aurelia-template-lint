@@ -1,17 +1,31 @@
 {
   "name": "gulp-aurelia-template-lint",
   "description": "gulp plugin to sanity check template html",
+  "author": "Meirion Hughes <crakinshot@yahoo.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/MeirionHughes/gulp-aurelia-template-lint"
   },
   "license": "(Apache-2.0)",
   "version": "0.3.4",
+  "keywords": [
+    "template",
+    "html",
+    "lint",
+    "sanity",
+    "aurelia",
+    "angular2",
+    "web-component"
+  ],
   "dependencies": {
-    "template-lint": "0.2.x",
     "aurelia-template-lint": "0.3.x",
-    "event-stream": "^3.3.2",
     "gulp": "3.x",
     "gulp-util": "3.x"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "devDependencies": {
+    "gulp-jasmine": "^2.3.0"
   }
 }
