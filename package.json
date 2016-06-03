@@ -10,6 +10,7 @@
   "dependencies": {
     "template-lint": "0.2.x",
     "aurelia-template-lint": "0.3.x",
+    "event-stream": "^3.3.2",
     "gulp": "3.x",
     "gulp-util": "3.x"
   }
