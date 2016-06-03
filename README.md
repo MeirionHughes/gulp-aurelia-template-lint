@@ -4,6 +4,8 @@
 Wrap of [aurelia-template-lint](https://github.com/MeirionHughes/aurelia-template-lint) as a simple gulp plugin in order to sanity check html
 
 [![NPM version][npm-image]][npm-url]
+[![NPM downloads][npm-downloads]][npm-url]
+[![Travis Status][travis-image]][travis-url]
 
 ## install
 ```
@@ -50,3 +52,8 @@ Icon courtesy of [The Noun Project](https://thenounproject.com/)
 [npm-url]: https://npmjs.org/package/gulp-aurelia-template-lint
 [npm-image]: http://img.shields.io/npm/v/gulp-aurelia-template-lint.svg
 
+[npm-url]: https://npmjs.org/package/gulp-aurelia-template-lint
+[npm-image]: http://img.shields.io/npm/v/gulp-aurelia-template-lint.svg
+[npm-downloads]: http://img.shields.io/npm/dm/gulp-aurelia-template-lint.svg
+[travis-url]: https://travis-ci.org/MeirionHughes/gulp-aurelia-template-lint
+[travis-image]: https://img.shields.io/travis/MeirionHughes/gulp-aurelia-template-lint/master.svg
