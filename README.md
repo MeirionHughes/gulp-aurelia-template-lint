@@ -7,12 +7,12 @@ Wrap of [aurelia-template-lint](https://github.com/MeirionHughes/aurelia-templat
 [![NPM downloads][npm-downloads]][npm-url]
 [![Travis Status][travis-image]][travis-url]
 
-## install
+## Install
 ```
 npm install gulp-aurelia-template-lint
 ```
 
-## usage
+## Usage
 
 ```
 var gulp = require('gulp');
