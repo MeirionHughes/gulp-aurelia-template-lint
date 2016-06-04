@@ -17,30 +17,25 @@ npm install gulp-aurelia-template-lint
 ```
 var gulp = require('gulp');
 var linter = require('gulp-aurelia-template-lint');
+var config = new (require('aurelia-template-lint').Config);
 
-gulp.task('lint-template-html', function () {
+config.obsoleteTags.push('my-old-tag');
+
+gulp.task('default', function () {
     return gulp.src('**/*.html')
         .pipe(linter())
         .pipe(gulp.dest('output'));
 });
- 
-```
 
-## custom rules example
-
-you can override the default set of rules by supplying an array of rules.
-
-```
-var gulp = require('gulp');
-var linter = require('gulp-aurelia-template-lint');
-
-var TemplateRule = require('aurelia-template-lint').TemplateRule;
-
-var rules = [new TemplateRule()];
-
-gulp.task('build-html', function () {
+gulp.task('with-custom-config', function () {
     return gulp.src('**/*.html')
-        .pipe(linter(rules))
+        .pipe(linter(config))
+        .pipe(gulp.dest('output'));
+});
+
+gulp.task('with-custom-reporter', function () {
+    return gulp.src('**/*.html')
+        .pipe(linter(config, (error, file)=>{})
         .pipe(gulp.dest('output'));
 });
 ```
