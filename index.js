@@ -13,9 +13,7 @@ module.exports = function(config, reporter) {
         }
           
     var linter = new AureliaLinter(config);
-    
-    console.log();
-   
+
     var stream = new Stream.Transform({objectMode: true});
     stream._transform = function(file, encoding, cb) {
         // When null just pass through
@@ -23,21 +21,21 @@ module.exports = function(config, reporter) {
             this.push(file);
             cb();
             return;
-        }             
+        }      
         
         var pathShort = "";
         
         if(file.path && file.cwd)
             pathShort = file.path.substring(file.cwd.length, file.path.Length);
         
-        var html = String(file.contents);
-        
-        var self = this;
+        var html = String(file.contents);        
+        var self = this;        
         
         linter
             .lint(html)        
-            .then((errors) => {           
-                errors.forEach((error) => {reporter(error,pathshort)});
+            .then((errors) => {          
+                errors.forEach((error) => {                    
+                    reporter(error, pathShort)});
             })
             .then(() => {
                 self.push(file);              
