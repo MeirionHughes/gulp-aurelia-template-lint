@@ -1,29 +1,18 @@
 var Stream = require('stream');
 var gutil = require('gulp-util');
-var Linter = require('template-lint').Linter;
+var AureliaLinter = require('aurelia-template-lint').AureliaLinter;
+var Config = require('aurelia-template-lint').Config;
 
-var SelfCloseRule = require('template-lint').SelfCloseRule;
-var ParserRule = require('template-lint').ParserRule;
-
-var ProjectionRule = require('aurelia-template-lint').ProjectionRule;
-var TemplateRule = require('aurelia-template-lint').TemplateRule;
-var RequireRule = require('aurelia-template-lint').RequireRule;
-
-module.exports = function(rules, reporter) {
-       
-    if (!rules)
-        rules = [
-            new SelfCloseRule(),
-            new ParserRule(), 
-            new TemplateRule(), 
-            new RequireRule()];
-            
+module.exports = function(config, reporter) {
+    if(!config)  
+       config = new Config();
+  
     if(!reporter)
         reporter = (error, file)=>{
              gutil.log(`WARNING: ${error.message} Ln ${error.line} Col ${error.column}`, file);
         }
           
-    var linter = new Linter(rules);
+    var linter = new AureliaLinter(config);
     
     console.log();
    
@@ -36,7 +25,11 @@ module.exports = function(rules, reporter) {
             return;
         }             
         
-        var pathshort = "file";// file.path: file.path.substring(file.cwd.length, file.path.Length);
+        var pathShort = "";
+        
+        if(file.path && file.cwd)
+            pathShort = file.path.substring(file.cwd.length, file.path.Length);
+        
         var html = String(file.contents);
         
         var self = this;
