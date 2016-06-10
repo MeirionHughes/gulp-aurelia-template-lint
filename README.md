@@ -35,7 +35,7 @@ gulp.task('with-custom-config', function () {
 
 gulp.task('with-custom-reporter', function () {
     return gulp.src('**/*.html')
-        .pipe(linter(config, (error, file)=>{})
+        .pipe(linter(config, (error, file)=>{}))
         .pipe(gulp.dest('output'));
 });
 ```
