@@ -9,7 +9,7 @@ Wrap of [aurelia-template-lint](https://github.com/MeirionHughes/aurelia-templat
 
 ## Install
 ```
-npm install gulp-aurelia-template-lint
+npm install gulp-aurelia-template-lint --save-dev
 ```
 
 ## Usage
