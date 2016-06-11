@@ -18,7 +18,7 @@
     "web-component"
   ],
   "dependencies": {
-    "aurelia-template-lint": "0.4.x",
+    "aurelia-template-lint": "0.5.x",
     "gulp": "3.x",
     "gulp-util": "3.x"
   },

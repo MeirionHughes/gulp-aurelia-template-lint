@@ -19,7 +19,7 @@ var gulp = require('gulp');
 var linter = require('gulp-aurelia-template-lint');
 var config = new (require('aurelia-template-lint').Config);
 
-config.obsoleteTags.push('my-old-tag');
+config.obsoleteTags.push({tag:"my-old-tag"});
 
 gulp.task('default', function () {
     return gulp.src('**/*.html')
