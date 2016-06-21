@@ -32,7 +32,7 @@ module.exports = function(config, reporter) {
         var self = this;        
         
         linter
-            .lint(html)        
+            .lint(html, pathShort)        
             .then((errors) => {          
                 errors.forEach((error) => {                    
                     reporter(error, pathShort)});
