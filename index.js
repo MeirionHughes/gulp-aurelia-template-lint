@@ -2,6 +2,7 @@ var Stream = require('stream');
 var gutil = require('gulp-util');
 var AureliaLinter = require('aurelia-template-lint').AureliaLinter;
 var Config = require('aurelia-template-lint').Config;
+var Path = require('path');
 
 module.exports = function(config, reporter) {
     if(!config)  
@@ -30,9 +31,9 @@ module.exports = function(config, reporter) {
         
         var html = String(file.contents);        
         var self = this;        
-        
+
         linter
-            .lint(html, pathShort)        
+            .lint(html, Path.normalize("."+pathShort))    
             .then((errors) => {          
                 errors.forEach((error) => {                    
                     reporter(error, pathShort)});

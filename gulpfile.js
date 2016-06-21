@@ -2,8 +2,12 @@
 
 var gulp = require('gulp');
 var jasmine = require('gulp-jasmine');
-
 var linter = require('./index');
+var Config = require('aurelia-template-lint').Config;
+
+var config = new Config();
+config.useStaticTyping = true;
+config.sourceFileGlob = "example/**/*.ts";
 
 gulp.task('test', function () {
     return gulp.src('spec/plugin.spec.js')
@@ -11,6 +15,6 @@ gulp.task('test', function () {
 });
 
 gulp.task('test-example', function () {
-    return gulp.src('example.html')
-       .pipe(linter());
+    return gulp.src('example/foo.html')
+       .pipe(linter(config));
 });
