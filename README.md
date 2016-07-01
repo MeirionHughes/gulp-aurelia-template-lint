@@ -21,6 +21,10 @@ var config = new (require('aurelia-template-lint').Config);
 
 config.obsoleteTags.push({tag:"my-old-tag"});
 
+/// opt-in to static type checks:
+//config.useStaticTyping = true;
+//config.sourceFileGlob = "source/**/*.ts";
+
 gulp.task('default', function () {
     return gulp.src('**/*.html')
         .pipe(linter())
