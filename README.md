@@ -8,6 +8,7 @@ Wrap of [aurelia-template-lint](https://github.com/MeirionHughes/aurelia-templat
 [![Travis Status][travis-image]][travis-url]
 
 ## Install
+_Note: node.js 5 or 6 is required. There is currently an issue in trying to install some aurelia dependencies in node.js 4._
 ```
 npm install gulp-aurelia-template-lint --save-dev
 ```
