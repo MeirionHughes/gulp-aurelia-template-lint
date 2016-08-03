@@ -20,11 +20,11 @@ var gulp = require('gulp');
 var linter = require('gulp-aurelia-template-lint');
 var config = new (require('aurelia-template-lint').Config);
 
-config.obsoleteTags.push({tag:"my-old-tag"});
+config.obsoleteTagOpts.push({tag:"my-old-tag"});
 
 /// opt-in to static type checks:
-//config.useStaticTyping = true;
-//config.sourceFileGlob = "source/**/*.ts";
+//config.useRuleAureliaBindingAccess = true;
+//config.reflectionOpts.sourceFileGlob = "src/**/*.ts";
 
 gulp.task('default', function () {
     return gulp.src('**/*.html')

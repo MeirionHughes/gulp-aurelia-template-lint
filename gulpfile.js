@@ -6,8 +6,9 @@ var linter = require('./index');
 var Config = require('aurelia-template-lint').Config;
 
 var config = new Config();
-config.useStaticTyping = true;
-config.sourceFileGlob = "example/**/*.ts";
+
+config.useRuleAureliaBindingAccess = true;
+config.reflectionOpts.sourceFileGlob = "example/**/*.ts";
 
 gulp.task('test', function () {
     return gulp.src('spec/plugin.spec.js')
